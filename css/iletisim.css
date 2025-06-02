@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* siyah arka plan */
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Başlık */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+/* Navbar */
+.navbar {
+  background-color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+/* Menü Ortalanmış */
+.menu-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #e50914;
+}
+
+/* Sağdaki Butonlar */
+.user-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Ortak Buton Stili */
+.user-buttons .btn {
+  background-color: #e50914;
+  color: rgb(10, 10, 10);
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.user-buttons .btn:hover {
+  background-color: #b00610;
+}
+
+/* Kayıt ol özel rengi */
+.user-buttons .btn-kayit {
+  background-color: transparent;
+  border: 1px solid #e50914;
+  color: #e50914;
+}
+
+.user-buttons .btn-kayit:hover {
+  background-color: #e50914;
+  color: white;
+}
+
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #e50914;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #090909;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.iletisim-formu, .iletisim-bilgileri {
+  background-color: #100f0f;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #070707;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #e50914;
+  color: rgb(12, 12, 12);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #c40611;
+}
+.ustmenubaslik{
+  color:#e50914;
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 36px;
+  margin-right: 250px;
+
+}

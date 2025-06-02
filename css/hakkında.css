@@ -1,0 +1,136 @@
+/* Genel ayarlar */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* siyah arka plan */
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Başlık */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+.ustmenubaslik{
+  color:#e50914;
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 36px;
+  margin-right: 250px;
+
+}
+/* Navbar */
+.navbar {
+  background-color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+/* Menü Ortalanmış */
+.menu-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #e50914;
+}
+
+/* Sağdaki Butonlar */
+.user-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Ortak Buton Stili */
+.user-buttons .btn {
+  background-color: #e50914;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.user-buttons .btn:hover {
+  background-color: #b00610;
+}
+
+/* Kayıt ol özel rengi */
+.user-buttons .btn-kayit {
+  background-color: transparent;
+  border: 1px solid #e50914;
+  color: #e50914;
+}
+
+.user-buttons .btn-kayit:hover {
+  background-color: #e50914;
+  color: white;
+}
+
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #e50914;
+}
+
+.hakkinda-metni h2,
+.iletisim-kutusu h2 {
+  color: #e50914;
+  margin-top: 30px;
+  border-bottom: 2px solid #e50914;
+  padding-bottom: 5px;
+}
+
+.hakkinda-metni p,
+.iletisim-kutusu p {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li::before {
+  content: "✔ ";
+  color: #e50914;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  color: #aaa;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+}

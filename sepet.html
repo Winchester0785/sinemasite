@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARK SİNEMA - Vizyona Giren Filmler</title>
+  <link rel="stylesheet" href="css/sepet.css" />
+</head>
+<body>
+
+<div class="container">
+  <label for="filmSec">🎞️ Film Seç:</label>
+  <select id="filmSec">
+    <option value="">-- Film Seçin --</option>
+    <option value="AŞK SADECE BİR AN">AŞK SADECE BİR AN</option>
+    <option value="AVATAR">AVATAR</option>
+    <option value="AYAKÇI">AYAKÇI</option>
+    <option value="CAPTAIN AMERICA BRAVE NEW WORLD">CAPTAIN AMERICA BRAVE NEW WORLD</option>
+    <option value="DAYI 2">DAYI 2</option>
+    <option value="HÜDDAM 5 ZÜHUR">HÜDDAM 5 ZÜHUR</option>
+    <option value="KAYIP DÜNYA">KAYIP DÜNYA</option>
+    <option value="KUTSAL DAMACANA 5 ZOMBİ">KUTSAL DAMACANA 5 ZOMBİ</option>
+    <option value="MINECRAFT">MINECRAFT</option>
+    <option value="ŞAMPİYONLAR">ŞAMPİYONLAR</option>
+    <option value="SICAK BÜFE">SICAK BÜFE</option>
+    <option value="SNOW WHITE">SNOW WHITE</option>
+    <option value="TERS YÜZ 2">TERS YÜZ 2</option>
+    <option value="TUR REHBERİ">TUR REHBERİ</option>
+  </select>
+
+  <h2 id="film-bilgisi">🎬 Film: -</h2>
+
+  <label for="seansSec">🕒 Seans Saati Seç:</label>
+  <select id="seansSec">
+    <option value="12:00">12:00</option>
+    <option value="14:00">14:00</option>
+    <option value="16:00">16:00</option>
+    <option value="18:00">18:00</option>
+     <option value="20:00">20:00</option>
+      <option value="22:00">22:00</option>
+       
+  </select>
+
+  <br><br>
+<br><br>
+<a href="index.html" class="btn">Anasayfaya Dön</a>
+
+  <label for="fiyatSec">💰 Ücret Seç:</label>
+  <select id="fiyatSec">
+    <option value="240"> 240TL (Öğrenci)</option>
+    <option value="300"> 300TL (Tam)</option>
+    <option value="500"> 500TL (VIP)</option>
+    <option value="180"> 180TL (Salı Gününe Özel)</option>
+  </select>
+
+  <ul id="secilenListe"></ul>
+
+  <div class="koltuklar" id="koltuklar"></div>
+  <p id="hediyeMesaj" style="color: green; font-weight: bold; margin-top: 10px;"></p>
+
+  <button id="odemeButonu" onclick="window.location.href='ödeme.html'" disabled>Ödeme Yap</button>
+
+
+
+  <div class="ozet">
+    <h3>🪑 Seçilen Koltuklar:</h3>
+    <ul id="secilenListe"></ul>
+  </div>
+</div>
+
+<script>
+  const filmSecSelect = document.getElementById("filmSec");
+  const filmBilgisi = document.getElementById("film-bilgisi");
+  const koltuklarContainer = document.getElementById("koltuklar");
+  const secilenListe = document.getElementById("secilenListe");
+  const fiyatSec = document.getElementById("fiyatSec");
+  const seansSec = document.getElementById("seansSec");
+  const odemeButonu = document.getElementById("odemeButonu");
+  const hediyeMesaj = document.getElementById("hediyeMesaj");
+
+  // Film seçim bilgisi yükle
+  const oncekiFilm = localStorage.getItem("secilenFilm");
+  if (oncekiFilm) {
+    filmBilgisi.textContent = "🎬 Film: " + oncekiFilm;
+    filmSecSelect.value = oncekiFilm;
+  }
+
+  filmSecSelect.addEventListener("change", function () {
+    const secilenFilm = filmSecSelect.value;
+    if (secilenFilm) {
+      localStorage.setItem("secilenFilm", secilenFilm);
+      filmBilgisi.textContent = "🎬 Film: " + secilenFilm;
+    }
+  });
+
+  // Koltukları oluştur
+  const satirlar = ['A','B','C','D','E','F'];
+  const doluKoltuklar = ['B2', 'C3', 'E4'];
+
+  satirlar.forEach(satir => {
+    for (let i = 1; i <= 5; i++) {
+      const kod = satir + i;
+      const koltuk = document.createElement('div');
+      koltuk.classList.add('koltuk');
+      koltuk.dataset.kod = kod;
+      koltuk.textContent = kod;
+
+      if (doluKoltuklar.includes(kod)) {
+        koltuk.classList.add('dolu');
+      }
+
+      koltuklarContainer.appendChild(koltuk);
+    }
+  });
+
+  // Koltuk seçimi ve buton aktifliği + Popcorn kampanyası
+  koltuklarContainer.addEventListener('click', (e) => {
+    const hedef = e.target;
+    if (hedef.classList.contains('koltuk') && !hedef.classList.contains('dolu')) {
+      hedef.classList.toggle('secili');
+    }
+
+    const seciliKoltuklar = document.querySelectorAll(".koltuk.secili");
+    odemeButonu.disabled = seciliKoltuklar.length === 0;
+
+    // 🎉 Popcorn kampanyası: 2 koltuk seçilirse mesaj göster
+    if (seciliKoltuklar.length === 2) {
+      hediyeMesaj.textContent = "🎉 1 Adet Popcorn Bedava!";
+    } else {
+      hediyeMesaj.textContent = "";
+    }
+
+    // Seçilenleri listele
+    secilenListe.innerHTML = '';
+    if (seciliKoltuklar.length > 0) {
+      const fiyat = parseInt(fiyatSec.value);
+      const seans = seansSec.value;
+      let toplam = 0;
+
+      const seansLi = document.createElement('li');
+      seansLi.innerHTML = `<strong>Seans Saati: ${seans}</strong>`;
+      secilenListe.appendChild(seansLi);
+
+      seciliKoltuklar.forEach(koltuk => {
+        const kod = koltuk.dataset.kod;
+        toplam += fiyat;
+        const li = document.createElement('li');
+        li.textContent = `Koltuk: ${kod} - ${fiyat} TL`;
+        secilenListe.appendChild(li);
+      });
+
+      const toplamLi = document.createElement('li');
+      toplamLi.innerHTML = `<strong>Toplam: ${toplam} TL</strong>`;
+      toplamLi.style.marginTop = '10px';
+      secilenListe.appendChild(toplamLi);
+    }
+    
+  });
+</script>
+
+
+</body>
+</html>

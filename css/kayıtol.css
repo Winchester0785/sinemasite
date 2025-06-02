@@ -1,0 +1,82 @@
+/* Sayfa genel görünümü */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Siyah arka plan */
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Kayıt paneli */
+.form-container {
+  background-color: #111; /* Panel rengi */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Başlık */
+.form-container h2 {
+  margin-bottom: 30px;
+  color: #e50914;
+}
+
+/* Etiketler */
+form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Giriş kutuları */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #222;
+  border: 1px solid #444;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Kayıt butonu */
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #b00610;
+}
+
+/* Alt metin */
+p {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+p a {
+  color: #e50914;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}

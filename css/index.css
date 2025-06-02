@@ -1,0 +1,176 @@
+/* Genel ayarlar */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* siyah arka plan */
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Başlık */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+.ustmenubaslik{
+  color:#e50914;
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 36px;
+  margin-right: 250px;
+
+}
+/* Navbar */
+.navbar {
+  background-color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+/* Menü Ortalanmış */
+.menu-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #e50914;
+}
+
+/* Sağdaki Butonlar */
+.user-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Ortak Buton Stili */
+.user-buttons .btn {
+  background-color: #e50914;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.user-buttons .btn:hover {
+  background-color: #b00610;
+}
+
+/* Kayıt ol özel rengi */
+.user-buttons .btn-kayit {
+  background-color: transparent;
+  border: 1px solid #e50914;
+  color: #e50914;
+}
+
+.user-buttons .btn-kayit:hover {
+  background-color: #e50914;
+  color: white;
+}
+
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #e50914;
+}
+
+/* Film kartları düzeni */
+.film-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 sütun */
+  gap: 20px;
+  padding: 30px;
+}
+
+/* Film kartı */
+.film-card {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.2);
+  transition: transform 0.3s;
+}
+
+.film-card:hover {
+  transform: scale(1.05);
+}
+
+/* Film görseli */
+.film-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+/* Film adı */
+.film-card h2 {
+  font-size: 1rem;
+  padding: 10px;
+}
+
+/* Buton */
+.film-card button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.film-card button:hover {
+  background-color: #b00610;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 1024px) {
+  .film-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .film-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .film-container {
+    grid-template-columns: 1fr;
+  }
+}
+

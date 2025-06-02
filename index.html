@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARK SİNEMA-Vizyona Giren Filmler</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="icon" href="gorseller/ıronmanıcon.png">
+</head>
+<body>
+  <header>
+    <h1>🎬 Vizyona Giren Filmler</h1>
+  </header>
+ 
+<nav class="navbar">
+  <div class="menu-wrapper">
+    <ul class="menu">
+    <div class="ustmenubaslik" href="index.html">ARK SİNEMA</div>
+      <li><a href="index.html">Anasayfa</a></li>
+      <li><a href="kampanyalar.html">Kampanyalar</a></li>
+      <li><a href="yakında.html">Yakında</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+       <li><a href="hakkında.html">Hakkında</a></li>
+       
+      
+    </ul>
+  </div>
+  <div class="user-buttons">
+    <a href="sepet.html" class="btn">🛒 Sepet</a>
+    <a href="girisyap.html" class="btn">Giriş Yap</a>
+    <a href="kayıtol.html" class="btn ">Kayıt Ol</a>
+  </div>
+</nav>
+
+
+
+
+  <main class="film-container">
+    <!-- Film Kartları (1–14) -->
+    <div class="film-card">
+      <img src="gorseller/asksadecebiran.jpg" alt="Film 1">
+      <h2>AŞK SADECE BİR AN</h2>
+      <button onclick="rezervasyonYap('AŞK SADECE BİR AN')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/avatar.jpeg" alt="Film 2">
+      <h2>AVATAR</h2>
+      <button onclick="rezervasyonYap('AVATAR')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/ayakcifilmi.jpg" alt="Film 3">
+      <h2>AYAKÇI</h2>
+      <button onclick="rezervasyonYap('AYAKÇI')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/captaınamerıcabravenewworld.jpg" alt="Film 4">
+      <h2>CAPTAIN AMERICA BRAVE NEW WORLD</h2>
+      <button onclick="rezervasyonYap('CAPTAIN AMERICA BRAVE NEW WORLD')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/dayi2.jpg" alt="Film 5">
+      <h2>DAYI 2</h2>
+      <button onclick="rezervasyonYap('DAYI 2')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/huddam5zuhur.jpg" alt="Film 6">
+      <h2>HÜDDAM 5 ZÜHUR</h2>
+      <button onclick="rezervasyonYap('HÜDDAM 5 ZÜHUR')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/kayipdunya.jpg" alt="Film 7">
+      <h2>KAYIP DÜNYA</h2>
+      <button onclick="rezervasyonYap('KAYIP DÜNYA')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/kutsaldamacana5zombi.jpg" alt="Film 8">
+      <h2>KUTSAL DAMACANA 5 ZOMBİ</h2>
+      <button onclick="rezervasyonYap('KUTSAL DAMACANA 5 ZOMBİ')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/minecraft.jpg" alt="Film 9">
+      <h2>MINECRAFT</h2>
+      <button onclick="rezervasyonYap('MINECRAFT')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/sampiyonlar.jpeg" alt="Film 10">
+      <h2>ŞAMPİYONLAR</h2>
+      <button onclick="rezervasyonYap('ŞAMPİYONLAR')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/sicakbufe.webp" alt="Film 11">
+      <h2>SICAK BÜFE</h2>
+      <button onclick="rezervasyonYap('SICAK BÜFE')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/snowwhıte.webp" alt="Film 12">
+      <h2>SNOW WHITE</h2>
+      <button onclick="rezervasyonYap('SNOW WHITE')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/tersyuz2.jpg" alt="Film 13">
+      <h2>TERS YÜZ 2</h2>
+      <button onclick="rezervasyonYap('TERS YÜZ 2')">Bilet Al</button>
+    </div>
+
+    <div class="film-card">
+      <img src="gorseller/turrehberi.jpg" alt="Film 14">
+      <h2>TUR REHBERİ</h2>
+      <button onclick="rezervasyonYap('TUR REHBERİ')">Bilet Al</button>
+    </div>
+  </main>
+
+  <script>
+    function rezervasyonYap(filmAdi) {
+      // Film adını localStorage'a kaydet
+      localStorage.setItem("secilenFilm", filmAdi);
+
+      // Sepet sayfasına yönlendir
+      window.location.href = "sepet.html";
+    }
+  </script>
+</body>
+</html>

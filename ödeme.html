@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ödeme Sayfası</title>
+  <link rel="stylesheet" href="css/ödeme.css">
+  <style>
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="payment-container">
+    <h2>Ödeme Sayfası</h2>
+
+    <div class="movie-info">
+      <p id="film-bilgisi"><strong></strong></p>
+      <p id="seans-bilgisi"><strong></strong></p>
+      <p id="koltuk-bilgisi"><strong></strong></p>
+      <p id="fiyat-bilgisi"><strong></strong></p>
+    </div>
+
+    <form id="payment-form">
+      <label for="name">Ad Soyad</label>
+      <input type="text" id="name" required>
+
+      <label for="card-number">Kart Numarası</label>
+      <input type="text" id="card-number" maxlength="19" required placeholder="1234 5678 9012 3456">
+
+      <div class="inline-fields">
+        <div>
+          <label for="expiry">Son Kullanma</label>
+          <input type="text" id="expiry" maxlength="5" placeholder="AA/YY" required>
+        </div>
+        <div>
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" maxlength="3" required>
+        </div>
+      </div>
+
+      <button type="submit">Ödemeyi Tamamla</button>
+    </form>
+
+    <div id="confirmation" class="hidden">
+      <p>🎉 Ödeme başarılı! Biletiniz e-posta adresinize gönderildi.</p>
+    </div>
+  </div>
+<a href="index.html" class="btn">Anasayfaya Dön</a>
+  <script>
+   
+
+    // Form gönderimini engelle ve mesaj göster
+    document.getElementById("payment-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("confirmation").classList.remove("hidden");
+      this.style.display = "none";
+    });
+  </script>
+</body>
+</html>

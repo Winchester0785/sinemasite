@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARK SİNEMA - Giriş Yap</title>
+  <link rel="stylesheet" href="css/girisyap.css" />
+  <link rel="icon" href="gorseller/ıronmanıcon.png">
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Giriş Yap</h2>
+    <form id="giris-form">
+      <label for="email">E-posta:</bel>
+      <input type="email" id="email" required>
+
+      <label for="sifre">Şifre:</label>
+      <input type="password" id="sifre" required>
+
+      <button type="submit">Giriş Yap</button>
+    </form>
+    <p>Hesabınız yok mu? <a href="kayıtol.html">Kayıt Ol</a></p>
+  </div>
+
+  <script>
+    document.getElementById("giris-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Giriş başarılı. Anasayfaya yönlendiriliyorsunuz...");
+      window.location.href = "index.html";
+    });
+  </script>
+
+</body>
+</html>

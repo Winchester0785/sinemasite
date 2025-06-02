@@ -1,0 +1,17 @@
+/* LOGO ALANI */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo span {
+  color: #e50914;
+  font-size: 1.4rem;
+  font-weight: bold;
+}

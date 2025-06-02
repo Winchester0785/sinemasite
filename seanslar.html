@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Koltuk Seçimi</title>
+  <link rel="stylesheet" href="css/seanslar.css">
+</head>
+<body>
+
+<div class="seans-karti">
+  <h2>Film: Inception</h2>
+  <p>Fiyat: <strong>80 TL</strong></p>
+
+  <div class="koltuklar">
+    <div class="koltuk">A1</div>
+    <div class="koltuk">A2</div>
+    <div class="koltuk">A3</div>
+    <div class="koltuk">A4</div>
+    <div class="koltuk">B1</div>
+    <div class="koltuk">B2</div>
+    <div class="koltuk">B3</div>
+    <div class="koltuk">B4</div>
+  </div>
+
+  <button class="bilet-al">Bilet Al</button>
+</div>
+
+<script>
+  const koltuklar = document.querySelectorAll('.koltuk');
+  koltuklar.forEach(koltuk => {
+    koltuk.addEventListener('click', () => {
+      koltuk.classList.toggle('secili');
+    });
+  });
+</script>
+
+</body>
+</html>
